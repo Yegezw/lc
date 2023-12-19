@@ -15,8 +15,8 @@ public class Solution4 {
             slow = slow.next;
             fast = fast.next.next;
         }
-        ListNode right = reverse(slow.next);
-        slow.next = null;
+        ListNode right = reverse(slow.next); // 注意
+        slow.next = null;                    // 注意
 
         ListNode left = head;
         while (right != null) {
