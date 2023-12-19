@@ -73,13 +73,13 @@ public class Solution3 {
      */
     public boolean isPalindrome1(ListNode head) {
         left = head;
-        return dg(head);
+        return postOrder(head);
     }
 
-    private boolean dg(ListNode right) {
+    private boolean postOrder(ListNode right) {
         if (right == null) return true;
 
-        boolean res = dg(right.next);
+        boolean res = postOrder(right.next);
 
         res = res && left.val == right.val;
         left = left.next;
