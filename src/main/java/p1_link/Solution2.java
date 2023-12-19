@@ -65,12 +65,12 @@ public class Solution2 {
         ListNode a = head;
         ListNode b = head;
         for (int i = 0; i < k; i++) {
-            if (b == null) return head; // 不足 k 个, 不需要反转
+            if (b == null) return head;   // 不足 k 个, 不需要反转
             b = b.next;
         }
+        ListNode newHead = reverse(a, b); // 反转前 k 个元素
 
-        ListNode newHead = reverse(a, b);
-        a.next = reverseKGroup(b, k);
+        a.next = reverseKGroup(b, k);     // 递归反转后续链表并连接起来
         return newHead;
     }
 
