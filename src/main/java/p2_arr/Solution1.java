@@ -85,6 +85,29 @@ public class Solution1 {
     }
 
     /**
+     * <a href="https://leetcode.cn/problems/squares-of-a-sorted-array/description/">977. 有序数组的平方</a>
+     */
+    public int[] sortedSquares(int[] nums) {
+        int[] arr = new int[nums.length];
+        int i = arr.length - 1;
+
+        // 合并两个降序数组, 得到一个升序数组
+        int left = 0;
+        int right = nums.length - 1;
+        while (left <= right) {
+            if (Math.abs(nums[left]) > Math.abs(nums[right])) {
+                arr[i--] = nums[left] * nums[left];
+                left++;
+            } else {
+                arr[i--] = nums[right] * nums[right];
+                right--;
+            }
+        }
+
+        return arr;
+    }
+
+    /**
      * <a href="https://leetcode.cn/problems/longest-palindromic-substring/description/">5. 最长回文子串</a>
      */
     public String longestPalindrome(String s) {
