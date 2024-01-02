@@ -33,8 +33,9 @@ public class Solution3 {
         if (node == null || node.next == null) return node;
         ListNode dummyHead = new ListNode(-1, node);
 
-        // 1 -> 2 -> 3 -> 4 -> 5 -> 6
-        // 2 -> 1 -> 4 -> 3 -> 6 -> 5
+        //     p        1    2    n
+        // dummyHead -> 1 -> 2 -> 3 -> 4 -> 5 -> 6
+        // dummyHead -> 2 -> 1 -> 4 -> 3 -> 6 -> 5
         ListNode prev = dummyHead;
         ListNode node1 = node;
         ListNode node2 = node.next;
