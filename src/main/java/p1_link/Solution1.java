@@ -39,7 +39,7 @@ public class Solution1 {
     public ListNode partition(ListNode head, int x) {
         ListNode dummyHead1 = new ListNode(-1);
         ListNode dummyHead2 = new ListNode(-1);
-        ListNode prev1 = dummyHead1; // 存放 < x 的节点
+        ListNode prev1 = dummyHead1; // 存放 <  x 的节点
         ListNode prev2 = dummyHead2; // 存放 >= x 的节点
 
         ListNode cur = head;
@@ -64,6 +64,7 @@ public class Solution1 {
      * <a href="https://leetcode.cn/problems/merge-k-sorted-lists/description/">23. 合并 K 个升序链表</a>
      */
     public ListNode mergeKLists(ListNode[] lists) {
+        // PriorityQueue<ListNode> minHeap = new PriorityQueue<>((o1, o2) -> o1.val - o2.val);
         PriorityQueue<ListNode> minHeap = new PriorityQueue<>(new Comparator<ListNode>() {
             @Override
             public int compare(ListNode o1, ListNode o2) {
@@ -132,8 +133,8 @@ public class Solution1 {
         ListNode slow = head;
         ListNode fast = head;
 
-        // 1 -> 2 -> 3 -> 4 -> null 返回 3
         // 1 -> 2 -> 3 -> 4 -> 5    返回 3
+        // 1 -> 2 -> 3 -> 4 -> null 返回 3
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
