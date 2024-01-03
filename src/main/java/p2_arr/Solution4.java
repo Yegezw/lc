@@ -92,7 +92,7 @@ public class Solution4 {
     public int longestSubstring(String s, int k) {
         int maxLen = 0;
         for (int count = 1; count <= 26; count++) {
-            if (s.length() < count) continue;
+            if (s.length() < count) break;
             maxLen = Math.max(maxLen, longestSubstring(s, k, count));
         }
         return maxLen;
@@ -107,6 +107,7 @@ public class Solution4 {
         int maxLen = 0;            // 符合条件的子字符串的最大长度
         int hasCount = 0;          // 滑动窗口中包含的不同字母的数量
 
+        // 窗口的左边界在字符串范围内, 则循环继续
         while (l < s.length()) {
             if (r + 1 < s.length() && hasCount <= count) {
                 r++;
