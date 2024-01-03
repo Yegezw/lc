@@ -18,12 +18,12 @@ public class Solution5 {
                 // cur 是重复元素
                 while (cur.next != null && cur.val == cur.next.val) cur = cur.next;
                 cur = cur.next;
-                if (cur == null) prev.next = null; // 注意
             } else {
                 // cur 非重复元素
                 prev.next = cur;
                 prev = prev.next;
                 cur = cur.next;
+                prev.next = null; // 注意
             }
         }
 
