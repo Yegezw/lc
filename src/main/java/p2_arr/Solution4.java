@@ -87,6 +87,53 @@ public class Solution4 {
     }
 
     /**
+     * <a href="https://leetcode.cn/problems/longest-substring-with-at-least-k-repeating-characters/description/">395. 至少有 K 个重复字符的最长子串</a>
+     */
+    public int longestSubstring(String s, int k) {
+        int maxLen = 0;
+        for (int count = 1; count <= 26; count++) {
+            if (s.length() < count) continue;
+            maxLen = Math.max(maxLen, longestSubstring(s, k, count));
+        }
+        return maxLen;
+    }
+
+    // 求符合条件的子字符串的最大长度
+    // 不同字母的数量为 count, 每种字母出现的次数 >= k
+    private int longestSubstring(String s, int k, int count) {
+        int l = 0, r = -1;         // [0 ... r] 是滑动窗口
+        int[] freq = new int[26];  // freq[c] = 滑动窗口中字符 c 的频率
+
+        int maxLen = 0;            // 符合条件的子字符串的最大长度
+        int hasCount = 0;          // 滑动窗口中包含的不同字母的数量
+
+        while (l < s.length()) {
+            if (r + 1 < s.length() && hasCount <= count) {
+                r++;
+                char c = s.charAt(r);
+                freq[c - 'a']++;
+                if (freq[c - 'a'] == 1) hasCount++;
+            } else {
+                char c = s.charAt(l);
+                freq[c - 'a']--;
+                if (freq[c - 'a'] == 0) hasCount--;
+                l++;
+            }
+
+            if (hasCount == count && yes(freq, k)) maxLen = Math.max(maxLen, r - l + 1);
+        }
+
+        return maxLen;
+    }
+
+    private boolean yes(int[] freq, int k) {
+        for (int n : freq) {
+            if (n != 0 && n < k) return false;
+        }
+        return true;
+    }
+
+    /**
      * <a href="https://leetcode.cn/problems/permutation-in-string/description/">567. 字符串的排列</a>
      */
     public boolean checkInclusion(String s1, String s2) {
