@@ -1,6 +1,6 @@
 package p1_link;
 
-import com.zzw.practice2_linked_list.ListNode;
+import help.ListNode;
 
 @SuppressWarnings("all")
 public class Solution2 {

@@ -1,6 +1,6 @@
 package p2_arr.rand;
 
-import com.zzw.practice2_linked_list.ListNode;
+import help.ListNode;
 
 import java.util.Random;
 
