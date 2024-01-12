@@ -1,12 +1,30 @@
 package p4_find_table;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 @SuppressWarnings("all")
 public class Solution2 {
+
+    /**
+     * <a href="https://leetcode.cn/problems/majority-element/description/">169. 多数元素</a>
+     */
+    public int majorityElement(int[] nums) {
+        int target = 0;
+        int count = 0;
+
+        for (int num : nums) {
+            if (count == 0) {
+                target = num;
+                count = 1;
+            } else if (num == target) {
+                count++;
+            } else {
+                count--;
+            }
+        }
+
+        return target;
+    }
 
     /**
      * <a href="https://leetcode.cn/problems/happy-number/description/">202. 快乐数</a>
@@ -28,6 +46,28 @@ public class Solution2 {
             n /= 10;
         }
         return sum;
+    }
+
+    /**
+     * <a href="https://leetcode.cn/problems/find-all-duplicates-in-an-array/description/">442. 数组中重复的数据</a>
+     */
+    public List<Integer> findDuplicates(int[] nums) {
+        List<Integer> res = new LinkedList<>();
+
+        for (int num : nums) {
+            // 注意索引，nums 中元素大小从 1 开始，
+            // 而索引是从 0 开始的，所以有一位索引偏移
+            if (nums[Math.abs(num) - 1] < 0) {
+                // 之前已经把对应索引的元素变成负数了，
+                // 这说明 num 重复出现了两次
+                res.add(Math.abs(num));
+            } else {
+                // 把索引 num - 1 置为负数
+                nums[Math.abs(num) - 1] *= -1;
+            }
+        }
+
+        return res;
     }
 
     /**
