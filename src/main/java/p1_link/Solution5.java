@@ -1,6 +1,6 @@
 package p1_link;
 
-import help.ListNode;
+import help.link.ListNode;
 
 @SuppressWarnings("all")
 public class Solution5 {

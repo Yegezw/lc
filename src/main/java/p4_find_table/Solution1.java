@@ -1,6 +1,6 @@
 package p4_find_table;
 
-import help.Node;
+import help.link.Node;
 
 import java.util.*;
 

@@ -1,6 +1,6 @@
 package p10_binary_tree.lc1;
 
-import help.TreeNode;
+import help.tree.TreeNode;
 
 /**
  * 二叉树纲领篇

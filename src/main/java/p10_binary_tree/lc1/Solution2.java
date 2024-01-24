@@ -1,6 +1,6 @@
 package p10_binary_tree.lc1;
 
-import help.TreeNode;
+import help.tree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.Deque;

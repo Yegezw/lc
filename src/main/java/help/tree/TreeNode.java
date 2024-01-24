@@ -1,4 +1,4 @@
-package help;
+package help.tree;
 
 /**
  * 针对 leetcode 上关于树的题目

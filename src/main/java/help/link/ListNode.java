@@ -1,4 +1,4 @@
-package help;
+package help.link;
 
 /**
  * 针对 leetcode 上关于链表的题目

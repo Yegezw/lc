@@ -1,6 +1,6 @@
 package p2_arr.rand;
 
-import help.ListNode;
+import help.link.ListNode;
 
 import java.util.Random;
 
