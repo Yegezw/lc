@@ -47,6 +47,8 @@ public class Solution {
     public Node connect1(Node node) {
         if (node == null) return null;
 
+        // 完美二叉树: left 存在则 right 也存在
+        // 自顶向下填充 node.left.next 和 node.right.next
         if (node.left != null) {
             node.left.next = node.right;
             if (node.next != null) node.right.next = node.next.left;
@@ -82,6 +84,7 @@ public class Solution {
         flatten1(node.left);
         flatten1(node.right);
 
+        // 自底向上保持 "中左右"
         TreeNode leftNode = node.left;
         TreeNode rightNode = node.right;
 
@@ -96,6 +99,7 @@ public class Solution {
     public void flatten2(TreeNode root) {
         TreeNode cur = root;
         while (cur != null) {
+            // 自顶向下保持 "中左右"
             if (cur.left != null) {
                 TreeNode prev = cur.left;
                 while (prev.right != null) prev = prev.right;

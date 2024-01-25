@@ -53,7 +53,7 @@ public class Solution4 {
     }
 
     private class Command {
-        public String s; // go, add
+        public String s; // go 递, add 处理
         public TreeNode node;
 
         public Command(String s, TreeNode node) {
