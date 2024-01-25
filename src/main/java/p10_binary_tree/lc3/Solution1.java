@@ -18,6 +18,7 @@ public class Solution1 {
     private TreeNode build(int[] nums, int l, int r) {
         if (l > r) return null;
 
+        // 自顶向下构建
         int maxIndex = l;
         int maxValue = nums[l];
         for (int i = l + 1; i <= r; i++) {

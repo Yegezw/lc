@@ -23,6 +23,7 @@ public class Solution3 {
     private TreeNode build(int[] inorder, int l1, int r1, int[] postorder, int l2, int r2) {
         if (l1 > r1) return null;
 
+        // 自顶向下构建
         int rootVal = postorder[r2];
         TreeNode root = new TreeNode(rootVal);
 

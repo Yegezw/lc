@@ -24,6 +24,7 @@ public class Solution4 {
         if (l1 > r1) return null;
         if (l1 == r1) return new TreeNode(preorder[l1]); // 注意
 
+        // 自顶向下构建
         int rootVal = preorder[l1];
         TreeNode root = new TreeNode(rootVal);
 
