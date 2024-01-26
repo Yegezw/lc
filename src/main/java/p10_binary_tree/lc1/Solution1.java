@@ -59,4 +59,27 @@ public class Solution1 {
 
         return Math.max(leftMaxDepth, rightMaxDepth) + 1;
     }
+
+    /**
+     * <a href="https://leetcode.cn/problems/count-complete-tree-nodes/description/">222. 完全二叉树的节点个数</a>
+     */
+    public int countNodes(TreeNode node) {
+        if (node == null) return 0;
+
+        int leftDepth = leftDepth(node);
+        int rightDepth = rightDepth(node);
+
+        if (leftDepth == rightDepth) return (int) (Math.pow(2, leftDepth) - 1);
+        return countNodes(node.left) + countNodes(node.right) + 1;
+    }
+
+    private int leftDepth(TreeNode node) {
+        if (node == null) return 0;
+        return leftDepth(node.left) + 1;
+    }
+
+    private int rightDepth(TreeNode node) {
+        if (node == null) return 0;
+        return rightDepth(node.right) + 1;
+    }
 }
