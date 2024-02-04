@@ -33,8 +33,9 @@ public class Solution2 {
         for (int i = 0; i < nums.length; i++) {
             if (used[i]) continue;  // 排除不合法的选择
 
-            track.add(nums[i]);     // 做选择
+            track.addLast(nums[i]); // 做选择
             used[i] = true;
+
             backtrack(nums, track); // 进入下一层回溯树
 
             track.removeLast();     // 取消选择
