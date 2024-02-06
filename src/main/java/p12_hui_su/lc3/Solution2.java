@@ -1,4 +1,4 @@
-package p99_lu.p1_hui_su.lc2;
+package p12_hui_su.lc3;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

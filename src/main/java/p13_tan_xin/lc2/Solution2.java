@@ -1,4 +1,4 @@
-package p99_lu.p2_tan_xin.lc1;
+package p13_tan_xin.lc2;
 
 import java.util.ArrayList;
 import java.util.Arrays;

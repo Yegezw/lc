@@ -1,4 +1,4 @@
-package p99_lu.p1_hui_su.lc0;
+package p12_hui_su.lc1;
 
 /**
  * <a href="https://leetcode.cn/problems/word-search/description/">79. 单词搜索</a>

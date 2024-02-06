@@ -1,10 +1,10 @@
-package p99_lu.p1_hui_su.lc2;
+package p12_hui_su.lc3;
 
 /**
  * <a href="https://leetcode.cn/problems/sudoku-solver/description/">37. 解数独</a>
  */
 @SuppressWarnings("all")
-public class Solution4 {
+public class Solution5 {
 
     private final boolean[][] row = new boolean[9][10];
     private final boolean[][] col = new boolean[9][10];

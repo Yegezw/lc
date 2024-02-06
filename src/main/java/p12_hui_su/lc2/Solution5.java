@@ -1,26 +1,24 @@
-package p99_lu.p1_hui_su.lc1;
+package p12_hui_su.lc2;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
- * <a href="https://leetcode.cn/problems/combination-sum-ii/description/">40. 组合总和 II</a>
+ * <a href="https://leetcode.cn/problems/combination-sum/description/">39. 组合总和</a>
  */
 @SuppressWarnings("all")
-public class Solution3 {
+public class Solution5 {
 
     private int trackSum = 0;
     private final LinkedList<Integer> track = new LinkedList<>();
     private final List<List<Integer>> res = new ArrayList<>();
 
-    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
         res.clear();
         track.clear();
         trackSum = 0;
 
-        Arrays.sort(candidates);
         backtrack(candidates, 0, target);
         return res;
     }
@@ -33,12 +31,10 @@ public class Solution3 {
         if (trackSum > target) return;
 
         for (int i = start; i < candidates.length; i++) {
-            if (i > start && candidates[i] == candidates[i - 1]) continue;
-
             track.addLast(candidates[i]);
             trackSum += candidates[i];
 
-            backtrack(candidates, i + 1, target);
+            backtrack(candidates, i, target); // 注意
 
             track.removeLast();
             trackSum -= candidates[i];

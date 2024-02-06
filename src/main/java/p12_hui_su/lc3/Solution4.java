@@ -1,4 +1,4 @@
-package p99_lu.p1_hui_su.lc2;
+package p12_hui_su.lc3;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.List;
  * <a href="https://leetcode.cn/problems/generate-parentheses/description/">22. 括号生成</a>
  */
 @SuppressWarnings("all")
-public class Solution3 {
+public class Solution4 {
 
     private StringBuilder track;
     private final List<String> res = new ArrayList<>();

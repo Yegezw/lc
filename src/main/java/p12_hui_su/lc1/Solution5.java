@@ -1,4 +1,4 @@
-package p99_lu.p1_hui_su.lc0;
+package p12_hui_su.lc1;
 
 /**
  * <a href="https://leetcode.cn/problems/number-of-islands/description/">200. 岛屿数量</a>

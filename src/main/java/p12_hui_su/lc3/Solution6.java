@@ -1,10 +1,10 @@
-package p99_lu.p1_hui_su.lc2;
+package p12_hui_su.lc3;
 
 /**
  * <a href="https://leetcode.cn/problems/max-area-of-island/description/">695. 岛屿的最大面积</a>
  */
 @SuppressWarnings("all")
-public class Solution5 {
+public class Solution6 {
 
     // 上右下左
     private final int[][] dir = {
