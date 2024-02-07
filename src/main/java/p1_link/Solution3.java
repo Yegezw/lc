@@ -67,7 +67,7 @@ public class Solution3 {
         return node2;
     }
 
-    public ListNode left;
+    private ListNode left;
 
     /**
      * <a href="https://leetcode.cn/problems/palindrome-linked-list/description/">234. 回文链表</a>

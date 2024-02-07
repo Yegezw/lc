@@ -31,7 +31,7 @@ public class Solution2 {
         return newHead;
     }
 
-    public ListNode successor;
+    private ListNode successor;
 
     /**
      * <a href="https://leetcode.cn/problems/reverse-linked-list-ii/description/">92. 反转链表 II</a>
