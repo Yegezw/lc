@@ -22,9 +22,10 @@ public class Solution3 {
         if (start == s.length()) return true;
 
         if (memo[start] == -1) {
+            String target = s.substring(start);
             boolean res = false;
             for (String prefix : wordDict) {
-                if (s.startsWith(prefix, start)) {
+                if (target.startsWith(prefix)) {
                     if (dp(s, start + prefix.length(), wordDict)) res = true;
                 }
             }

@@ -25,7 +25,7 @@ public class Solution1 {
 
     // 返回 matrix[0][.] 到 matrix[x][y] 的最小路径和
     private int dp(int[][] matrix, int x, int y) {
-        if (x < 0 || x >= matrix.length || y < 0 || y >= matrix.length) return Integer.MAX_VALUE;
+        if (y < 0 || y >= matrix.length) return Integer.MAX_VALUE;
         if (x == 0) return matrix[0][y];
 
         if (memo[x][y] == 66666) {
