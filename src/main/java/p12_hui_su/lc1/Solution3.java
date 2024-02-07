@@ -30,8 +30,8 @@ public class Solution3 {
 
         // 当前的选择列表为 [start ... end], 路径为 track
         // track.size() == k 时结束, 因此当前 track 中有 k - track.size() 个空位
-        // 选择列表的大小 >= track 的空位个数, 即 end - start + 1 >= k - track.size()
-        for (int i = start; i <= end - (k - track.size() - 1); i++) {
+        // 选择列表的大小 >= track 的空位个数, 即 end - i + 1 >= k - track.size()
+        for (int i = start; i <= end - (k - track.size()) + 1; i++) {
             track.addLast(i);              // 做选择
 
             backtrack(i + 1, end, k); // 进入下一层回溯树

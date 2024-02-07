@@ -2,6 +2,7 @@ package p12_hui_su.lc3;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -10,13 +11,13 @@ import java.util.List;
 @SuppressWarnings("all")
 public class Solution3 {
 
-    private StringBuilder track;
+    private final LinkedList<String> track = new LinkedList<>();
     private final List<String> res = new ArrayList<>();
     private HashSet<String> set;
 
     public List<String> wordBreak(String s, List<String> wordDict) {
         res.clear();
-        track = new StringBuilder();
+        track.clear();
 
         set = new HashSet<>(wordDict);
         backtrack(s, 0);
@@ -26,7 +27,7 @@ public class Solution3 {
     private void backtrack(String s, int start) {
         // s 遍历完成
         if (start == s.length()) {
-            res.add(track.toString().trim());
+            res.add(String.join(" ", track));
             return;
         }
 
@@ -34,11 +35,11 @@ public class Solution3 {
         for (int end = start; end < s.length(); end++) {
             String cur = s.substring(start, end + 1);
             if (set.contains(cur)) {
-                track.append(cur).append(" ");
+                track.addLast(cur);
 
                 backtrack(s, end + 1);
 
-                track.delete(track.length() - cur.length() - 1, track.length());
+                track.removeLast();
             }
         }
     }
