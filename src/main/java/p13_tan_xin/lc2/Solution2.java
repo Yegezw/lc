@@ -11,8 +11,6 @@ public class Solution2 {
      * <a href="https://leetcode.cn/problems/partition-labels/description/">763. 划分字母区间</a>
      */
     public List<Integer> partitionLabels(String s) {
-        int n = s.length();
-
         // 统计每一个字符的最远下标
         int[] last = new int[26];
         for (int i = 0; i < s.length(); i++) last[s.charAt(i) - 'a'] = i;
