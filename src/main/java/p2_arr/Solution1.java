@@ -1,8 +1,6 @@
 package p2_arr;
 
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.PriorityQueue;
 
 @SuppressWarnings("all")
 public class Solution1 {
@@ -141,31 +139,20 @@ public class Solution1 {
      * <a href="https://leetcode.cn/problems/advantage-shuffle/description/">870. 优势洗牌</a>
      */
     public int[] advantageCount(int[] nums1, int[] nums2) {
-        // index, nums2[index]
-        PriorityQueue<int[]> maxHeap = new PriorityQueue<>(new Comparator<int[]>() {
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                return o2[1] - o1[1];
-            }
-        });
-        for (int i = 0; i < nums2.length; i++) {
-            maxHeap.add(new int[]{i, nums2[i]});
-        }
+        // 对 nums2 的 "元素位置" 进行排序
+        Integer[] pos = new Integer[nums2.length];
+        for (int i = 0; i < pos.length; i++) pos[i] = i;
+        Arrays.sort(pos, (o1, o2) -> Integer.compare(nums2[o1], nums2[o2]));
 
         Arrays.sort(nums1);
         int left = 0;                 // min = nums1[left]
         int right = nums1.length - 1; // max = nums1[right]
 
-        int[] res = new int[nums1.length];
-        while (!maxHeap.isEmpty()) {
-            int[] pair = maxHeap.remove();
-            int index = pair[0];
-            int value = pair[1];
-
-            if (nums1[right] > value) res[index] = nums1[right--];
-            else res[index] = nums1[left++];
+        for (int i = pos.length - 1; i >= 0; i--) {
+            int maxPos = pos[i];
+            if (nums1[right] > nums2[maxPos]) nums2[maxPos] = nums1[right--];
+            else nums2[maxPos] = nums1[left++];
         }
-
-        return res;
+        return nums2;
     }
 }
