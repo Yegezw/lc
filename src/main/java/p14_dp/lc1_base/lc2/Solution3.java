@@ -1,4 +1,4 @@
-package p14_dp.lc1_dp_base.lc2;
+package p14_dp.lc1_base.lc2;
 
 import java.util.Arrays;
 import java.util.List;
