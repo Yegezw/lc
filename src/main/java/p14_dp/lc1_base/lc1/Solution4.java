@@ -17,6 +17,7 @@ public class Solution4 {
 
     private int[] memo;
 
+    // 返回用 coins[] 凑出 amount 的最少硬币个数
     private int dp(int[] coins, int amount) {
         if (amount < 0) return -1;
         if (amount == 0) return 0;

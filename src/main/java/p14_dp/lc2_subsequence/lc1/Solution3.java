@@ -11,20 +11,6 @@ public class Solution3 {
 
     // 动态规划
     public int maxSubArray1(int[] nums) {
-        int res = Integer.MIN_VALUE;
-
-        int pre = 0;
-        for (int num : nums) {
-            // pre = 以 num 为结尾的最大子数组和
-            pre = Math.max(num, pre + num);
-            res = Math.max(res, pre);
-        }
-
-        return res;
-    }
-
-    // 优化空间复杂度
-    public int maxSubArray2(int[] nums) {
         // memo[i] = nums[0 ... i] 以 i 为结尾的最大子数组和
         int[] memo = new int[nums.length];
         memo[0] = nums[0];
@@ -34,6 +20,20 @@ public class Solution3 {
             // 求解 memo[i]
             memo[i] = Math.max(nums[i], nums[i] + memo[i - 1]);
             res = Math.max(res, memo[i]);
+        }
+
+        return res;
+    }
+
+    // 优化空间复杂度
+    public int maxSubArray2(int[] nums) {
+        int res = Integer.MIN_VALUE;
+
+        int pre = 0;
+        for (int num : nums) {
+            // pre = 以 num 为结尾的最大子数组和
+            pre = Math.max(num, pre + num);
+            res = Math.max(res, pre);
         }
 
         return res;

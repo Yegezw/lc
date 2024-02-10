@@ -17,6 +17,7 @@ public class Solution3 {
 
     private int[] memo;
 
+    // 返回拆分 n 可以获得的最大乘积
     private int dp(int n) {
         if (n == 0) return 0;
         if (n == 1) return 1;
