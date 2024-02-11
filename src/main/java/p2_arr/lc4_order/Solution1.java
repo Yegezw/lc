@@ -1,7 +1,7 @@
-package p2_arr;
+package p2_arr.lc4_order;
 
 @SuppressWarnings("all")
-public class Solution2 {
+public class Solution1 {
 
     /**
      * <a href="https://leetcode.cn/problems/rotate-image/description/">48. 旋转图像</a>

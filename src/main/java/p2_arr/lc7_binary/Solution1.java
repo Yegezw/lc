@@ -1,4 +1,4 @@
-package p2_arr.binary;
+package p2_arr.lc7_binary;
 
 @SuppressWarnings("all")
 public class Solution1 {
@@ -25,6 +25,7 @@ public class Solution1 {
      * <a href="https://leetcode.cn/problems/search-insert-position/description/">35. 搜索插入位置</a>
      */
     public int searchInsert(int[] nums, int target) {
+        // 二分查找 >= target 的最小值
         int l = 0;
         int r = nums.length;
         int mid;
@@ -48,6 +49,7 @@ public class Solution1 {
     }
 
     private int searchL(int[] nums, int target) {
+        // 二分查找 >= target 的最小值
         int l = 0;
         int r = nums.length;
         int mid;
@@ -62,6 +64,7 @@ public class Solution1 {
     }
 
     private int searchR(int[] nums, int target) {
+        // 二分查找 <= target 的最大值
         int l = -1;
         int r = nums.length - 1;
         int mid;

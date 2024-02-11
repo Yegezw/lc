@@ -1,11 +1,11 @@
-package p2_arr.hash;
+package p2_arr.lc6_hash;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
 @SuppressWarnings("all")
-public class Solution {
+public class Solution0 {
 
     /**
      * <a href="https://leetcode.cn/problems/longest-chunked-palindrome-decomposition/description/">1147. 段式回文</a>

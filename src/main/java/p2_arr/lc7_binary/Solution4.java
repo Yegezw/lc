@@ -1,4 +1,4 @@
-package p2_arr.binary;
+package p2_arr.lc7_binary;
 
 @SuppressWarnings("all")
 public class Solution4 {

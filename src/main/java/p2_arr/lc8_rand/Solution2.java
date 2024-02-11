@@ -1,17 +1,17 @@
-package p2_arr.rand;
+package p2_arr.lc8_rand;
 
 import java.util.Random;
 
 /**
  * <a href="https://leetcode.cn/problems/random-pick-with-weight/">528 - 按权重随机选择</a>
  */
-public class PickIndex {
+public class Solution2 {
 
     private final int[] presum;
     private final int sum;
     private final Random random;
 
-    public PickIndex(int[] w) {
+    public Solution2(int[] w) {
         random = new Random();
 
         // w[i] 代表第 i 个任务的权重, 也就是说, 应该给第 i 个任务发放 w[i] 张彩票

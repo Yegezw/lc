@@ -1,10 +1,10 @@
-package p2_arr;
+package p2_arr.lc5_window;
 
 import java.util.LinkedList;
 import java.util.List;
 
 @SuppressWarnings("all")
-public class Solution4 {
+public class Solution {
 
     /**
      * <a href="https://leetcode.cn/problems/minimum-size-subarray-sum/description/">209. 长度最小的子数组</a>

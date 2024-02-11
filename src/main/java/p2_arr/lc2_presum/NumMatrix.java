@@ -1,4 +1,4 @@
-package p2_arr.presum;
+package p2_arr.lc2_presum;
 
 /**
  * <a href="https://leetcode.cn/problems/range-sum-query-2d-immutable/description/">304. 二维区域和检索 - 矩阵不可变</a>

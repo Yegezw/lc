@@ -1,10 +1,10 @@
-package p2_arr;
+package p2_arr.lc4_order;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @SuppressWarnings("all")
-public class Solution3 {
+public class Solution2 {
 
     /**
      * <a href="https://leetcode.cn/problems/spiral-matrix/description/">54. 螺旋矩阵</a>

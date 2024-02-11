@@ -1,4 +1,4 @@
-package p2_arr.diff;
+package p2_arr.lc3_diff;
 
 /**
  * 差分数组

@@ -1,10 +1,10 @@
-package p2_arr.hash;
+package p2_arr.lc6_hash;
 
 /**
  * <a href="https://leetcode.cn/problems/longest-chunked-palindrome-decomposition/description/">1147. 段式回文</a>
  */
 @SuppressWarnings("all")
-public class LongestDecomposition {
+public class Solution1 {
 
     private final long MOD = (long) (1e9 + 7);
     private final int B = 26;

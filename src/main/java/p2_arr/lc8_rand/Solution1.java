@@ -1,4 +1,4 @@
-package p2_arr.rand;
+package p2_arr.lc8_rand;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,12 +8,12 @@ import java.util.Random;
 /**
  * <a href="https://leetcode.cn/problems/random-pick-index/">398. 随机数索引</a>
  */
-public class Pick {
+public class Solution1 {
 
     private final Map<Integer, ArrayList<Integer>> map;
     private final Random random;
 
-    public Pick(int[] nums) {
+    public Solution1(int[] nums) {
         random = new Random();
         map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {

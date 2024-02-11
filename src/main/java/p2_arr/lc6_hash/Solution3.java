@@ -1,4 +1,4 @@
-package p2_arr.hash;
+package p2_arr.lc6_hash;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -8,7 +8,7 @@ import java.util.List;
  * <a href="https://leetcode.cn/problems/repeated-dna-sequences/description/">187. 重复的 DNA 序列</a>
  */
 @SuppressWarnings("all")
-public class FindRepeatedDnaSequences {
+public class Solution3 {
 
     /**
      * 滚动哈希, 4 进制

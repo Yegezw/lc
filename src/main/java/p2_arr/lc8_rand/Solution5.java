@@ -1,4 +1,4 @@
-package p2_arr.rand;
+package p2_arr.lc8_rand;
 
 import help.link.ListNode;
 
@@ -7,12 +7,12 @@ import java.util.Random;
 /**
  * <a href="https://leetcode.cn/problems/linked-list-random-node/description/">382. 链表随机节点</a>
  */
-public class GetRandom {
+public class Solution5 {
 
     private final ListNode head;
     private final Random random;
 
-    public GetRandom(ListNode head) {
+    public Solution5(ListNode head) {
         this.head = head;
         random = new Random();
     }

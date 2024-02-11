@@ -1,4 +1,4 @@
-package p2_arr;
+package p2_arr.lc1_two_point;
 
 import java.util.Arrays;
 

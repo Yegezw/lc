@@ -1,16 +1,16 @@
-package p2_arr.rand;
+package p2_arr.lc8_rand;
 
 import java.util.Random;
 
 /**
  * <a href="https://leetcode.cn/problems/shuffle-an-array/description/">384. 打乱数组</a>
  */
-public class KnuthShuffle {
+public class Solution4 {
 
     private final int[] nums;
     private final Random random;
 
-    public KnuthShuffle(int[] nums) {
+    public Solution4(int[] nums) {
         this.nums = nums.clone();
         random = new Random();
     }

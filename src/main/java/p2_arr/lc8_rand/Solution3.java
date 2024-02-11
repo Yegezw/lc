@@ -1,11 +1,11 @@
-package p2_arr.rand;
+package p2_arr.lc8_rand;
 
 import java.util.Random;
 
 /**
  * <a href="https://leetcode.cn/problems/implement-rand10-using-rand7/">470. 用 Rand7() 实现 Rand10()</a>
  */
-public class Rand10 {
+public class Solution3 {
 
     // 1 - 7
     private int rand7() {

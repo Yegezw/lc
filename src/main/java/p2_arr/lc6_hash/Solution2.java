@@ -1,10 +1,10 @@
-package p2_arr.hash;
+package p2_arr.lc6_hash;
 
 /**
  * <a href="https://leetcode.cn/problems/longest-happy-prefix/description/">1392. 最长快乐前缀</a>
  */
 @SuppressWarnings("all")
-public class LongestPrefix {
+public class Solution2 {
 
     private final long MOD = (long) (1e9 + 7);
     private final long B = 26;
