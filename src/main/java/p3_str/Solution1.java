@@ -52,7 +52,7 @@ public class Solution1 {
     public String reverseWords(String s) {
         String[] arr = s.trim().split(" ");
 
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         for (int i = arr.length - 1; i >= 0; i--) {
             String word = arr[i];
             if (word == "") continue; // 注意
