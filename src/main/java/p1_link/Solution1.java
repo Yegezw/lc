@@ -27,8 +27,8 @@ public class Solution1 {
             }
             prev = prev.next;
         }
-        if (p1 == null) prev.next = p2;
-        if (p2 == null) prev.next = p1;
+        if (p1 == null) prev.next = p2; // 注意
+        if (p2 == null) prev.next = p1; // 注意
 
         return dummyHead.next;
     }

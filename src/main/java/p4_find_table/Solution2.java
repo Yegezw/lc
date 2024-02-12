@@ -49,28 +49,6 @@ public class Solution2 {
     }
 
     /**
-     * <a href="https://leetcode.cn/problems/find-all-duplicates-in-an-array/description/">442. 数组中重复的数据</a>
-     */
-    public List<Integer> findDuplicates(int[] nums) {
-        List<Integer> res = new LinkedList<>();
-
-        for (int num : nums) {
-            // 注意索引，nums 中元素大小从 1 开始，
-            // 而索引是从 0 开始的，所以有一位索引偏移
-            if (nums[Math.abs(num) - 1] < 0) {
-                // 之前已经把对应索引的元素变成负数了，
-                // 这说明 num 重复出现了两次
-                res.add(Math.abs(num));
-            } else {
-                // 把索引 num - 1 置为负数
-                nums[Math.abs(num) - 1] *= -1;
-            }
-        }
-
-        return res;
-    }
-
-    /**
      * <a href="https://leetcode.cn/problems/two-sum/">1. 两数之和</a>
      */
     public int[] twoSum(int[] nums, int target) {

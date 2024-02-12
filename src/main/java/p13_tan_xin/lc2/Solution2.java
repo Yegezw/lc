@@ -41,16 +41,14 @@ public class Solution2 {
         int minIndex = 0;
         for (int i = 0; i < n; i++) {
             sum += gas[i] - cost[i];
-            // 经过第 i 个站点后 sum 到达新低
-            // 所以站点 i + 1 就是最低点(起点)
             if (sum < minSum) {
                 minSum = sum;
-                minIndex = i + 1;
+                minIndex = i;
             }
         }
 
-        if (sum < 0) return -1; // 总油量 < 总消耗, 无解
-        return minIndex == n ? 0 : minIndex;
+        if (sum < 0) return -1;    // 总油量 < 总消耗, 无解
+        return (minIndex + 1) % n; // 注意
     }
 
     /**

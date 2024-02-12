@@ -11,6 +11,7 @@ public class NumMatrix {
         int m = matrix.length;    // 行
         int n = matrix[0].length; // 列
 
+        // 注意: x y 的遍历从 1 开始
         presum = new int[m + 1][n + 1];
         for (int x = 1; x <= m; x++) {
             for (int y = 1; y <= n; y++) {

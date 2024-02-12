@@ -32,7 +32,7 @@ public class Solution3 {
         return false;
     }
 
-    public static boolean containsNearbyDuplicate2(int[] nums, int k) {
+    public boolean containsNearbyDuplicate2(int[] nums, int k) {
         // 窗口大小为 k + 1
         HashSet<Integer> set = new HashSet<>();
         for (int i = 0; i < nums.length; i++) {
@@ -83,7 +83,7 @@ public class Solution3 {
         return false;
     }
 
-    public static boolean containsNearbyAlmostDuplicate2(int[] nums, int indexDiff, int valueDiff) {
+    public boolean containsNearbyAlmostDuplicate2(int[] nums, int indexDiff, int valueDiff) {
         // 窗口大小为 indexDiff + 1
         TreeSet<Long> set = new TreeSet<>();
         for (int i = 0; i < nums.length; i++) {
