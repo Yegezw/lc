@@ -54,7 +54,7 @@ public class Solution1 {
         if (node == null) return 0;
 
         int leftMaxDepth = maxDepth(node.left);
-        int rightMaxDepth = maxDepth(node.left);
+        int rightMaxDepth = maxDepth(node.right);
         maxDiameter = Math.max(maxDiameter, leftMaxDepth + rightMaxDepth);
 
         return Math.max(leftMaxDepth, rightMaxDepth) + 1;

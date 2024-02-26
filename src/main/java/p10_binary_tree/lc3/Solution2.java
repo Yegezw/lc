@@ -20,6 +20,8 @@ public class Solution2 {
 
     private HashMap<Integer, Integer> valToIndex = new HashMap<>();
 
+    // l1 中左右 r1
+    // l2 左中右 r2
     private TreeNode build(int[] preorder, int l1, int r1, int[] inorder, int l2, int r2) {
         if (l1 > r1) return null;
 

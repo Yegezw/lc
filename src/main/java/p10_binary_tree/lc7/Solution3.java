@@ -35,7 +35,7 @@ public class Solution3 {
         if (node == null) return;
 
         sum += node.val;
-        path.add(node.val);
+        path.addLast(node.val);
 
         // 叶子节点
         if (node.left == null && node.right == null) {
@@ -44,11 +44,13 @@ public class Solution3 {
             path.removeLast();
             return;
         }
-
-        dfs(node.left, targetSum);
-        dfs(node.right, targetSum);
-        sum -= node.val;
-        path.removeLast();
+        // 非叶子节点
+        else {
+            dfs(node.left, targetSum);
+            dfs(node.right, targetSum);
+            sum -= node.val;
+            path.removeLast();
+        }
     }
 
     /**

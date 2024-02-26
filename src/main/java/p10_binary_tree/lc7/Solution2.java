@@ -35,7 +35,7 @@ public class Solution2 {
             TreeNode left = queue.remove();
             TreeNode right = queue.remove();
 
-            if (left == null && right == null) continue;
+            if (left == null && right == null) continue; // 注意
             if (left == null || right == null) return false;
             if (left.val != right.val) return false;
 

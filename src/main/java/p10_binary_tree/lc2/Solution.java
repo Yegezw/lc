@@ -20,6 +20,7 @@ public class Solution {
     private void order(TreeNode node) {
         if (node == null) return;
 
+        // 自顶向下翻转
         TreeNode leftNode = node.left;
         TreeNode rightNode = node.right;
         node.left = rightNode;
@@ -35,6 +36,7 @@ public class Solution {
         TreeNode leftRoot = invertTree2(node.left);
         TreeNode rightRoot = invertTree2(node.right);
 
+        // 自底向上翻转
         node.left = rightRoot;
         node.right = leftRoot;
 
