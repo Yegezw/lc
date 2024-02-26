@@ -9,7 +9,7 @@ public class Solution6 {
     // 最多买卖 maxK 次
     public int maxProfit(int maxK, int[] prices) {
         int n = prices.length;
-        if (maxK > n / 2) maxK /= 2; // k 无限制
+        if (maxK > n / 2) maxK = n / 2; // k 无限制
 
         // dp[i][k][0] 第 i 天结束时未持有股票, 从开始到现在最多买入 k 次
         // dp[i][k][1] 第 i 天结束时已持有股票, 从开始到现在最多买入 k 次
