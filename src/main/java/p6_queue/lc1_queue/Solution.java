@@ -1,9 +1,9 @@
-package p6_queue;
+package p6_queue.lc1_queue;
 
 import java.util.*;
 
 @SuppressWarnings("all")
-public class Solution1 {
+public class Solution {
 
     /**
      * <a href="https://leetcode.cn/problems/remove-all-adjacent-duplicates-in-string/description/">1047. 删除字符串中的所有相邻重复项</a>
@@ -46,8 +46,10 @@ public class Solution1 {
             char last;
             while (!deque.isEmpty() && (last = deque.getLast()) > c) {
                 if (freq[last] == 0) break;
-                deque.removeLast();
-                inDeque[last] = false;
+                else {
+                    deque.removeLast();
+                    inDeque[last] = false;
+                }
             }
             deque.addLast(c);
             inDeque[c] = true;

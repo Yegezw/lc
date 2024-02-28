@@ -76,8 +76,11 @@ public class Solution2 {
         return dfs(root, 0);
     }
 
+    //   2
+    //  /
+    // 3
     public int dfs(TreeNode node, int sum) {
-        if (node == null) return 0;
+        if (node == null) return 0; // 注意
 
         int cur = sum * 10 + node.val;
         if (node.left == null && node.right == null) return cur;

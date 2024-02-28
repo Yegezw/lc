@@ -17,8 +17,8 @@ public class Solution5 {
 
     public int pathSum(TreeNode root, int targetSum) {
         res = 0;
-        map = new HashMap<>();
         sum = 0;
+        map = new HashMap<>();
 
         map.put(0L, 1); // 为了处理包含根节点的情况
         dfs(root, targetSum);

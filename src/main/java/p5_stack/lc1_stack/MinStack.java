@@ -1,4 +1,4 @@
-package p5_stack;
+package p5_stack.lc1_stack;
 
 /**
  * <a href="https://leetcode.cn/problems/min-stack/description/">155. 最小栈</a>

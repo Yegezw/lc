@@ -19,7 +19,7 @@ public class Solution2 {
         return build(1, n);
     }
 
-    // 返回用 [l ... r] 组成的 BST
+    // 返回用 [l ... r] 组成的 BST 的 root 列表
     private List<TreeNode> build(int l, int r) {
         List<TreeNode> res = new LinkedList<>();
 
@@ -30,11 +30,11 @@ public class Solution2 {
 
         for (int i = l; i <= r; i++) {
             // root 的值为 i
-            List<TreeNode> leftTree = build(l, i - 1);
-            List<TreeNode> rightTree = build(i + 1, r);
+            List<TreeNode> leftRoot = build(l, i - 1);
+            List<TreeNode> rightRoot = build(i + 1, r);
 
-            for (TreeNode left : leftTree) {
-                for (TreeNode right : rightTree) {
+            for (TreeNode left : leftRoot) {
+                for (TreeNode right : rightRoot) {
                     TreeNode root = new TreeNode(i);
                     root.left = left;
                     root.right = right;

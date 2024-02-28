@@ -1,10 +1,10 @@
-package p6_queue;
+package p6_queue.lc2_monotonic_queue;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 
 @SuppressWarnings("all")
-public class Solution2 {
+public class Solution1 {
 
     /**
      * <a href="https://leetcode.cn/problems/sliding-window-maximum/">239. 滑动窗口最大值</a>

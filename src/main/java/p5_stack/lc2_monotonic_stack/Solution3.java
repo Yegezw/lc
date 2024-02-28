@@ -1,10 +1,10 @@
-package p5_stack;
+package p5_stack.lc2_monotonic_stack;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 
 @SuppressWarnings("all")
-public class Solution4 {
+public class Solution3 {
 
     /**
      * <a href="https://leetcode.cn/problems/largest-rectangle-in-histogram/description/">84. 柱状图中最大的矩形</a>
@@ -22,8 +22,8 @@ public class Solution4 {
             int height = heights[i];
 
             while (!stack.isEmpty() && heights[stack.peek()] >= height) stack.pop();
+            left[i] = stack.isEmpty() ? -1 : stack.peek(); // 注意: -1
 
-            left[i] = stack.isEmpty() ? -1 : stack.peek();
             stack.push(i);
         }
 
@@ -33,8 +33,8 @@ public class Solution4 {
             int height = heights[i];
 
             while (!stack.isEmpty() && heights[stack.peek()] >= height) stack.pop();
+            right[i] = stack.isEmpty() ? n : stack.peek(); // 注意: n
 
-            right[i] = stack.isEmpty() ? n : stack.peek();
             stack.push(i);
         }
 

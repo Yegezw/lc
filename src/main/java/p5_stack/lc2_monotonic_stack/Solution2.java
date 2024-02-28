@@ -1,10 +1,10 @@
-package p5_stack;
+package p5_stack.lc2_monotonic_stack;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 
 @SuppressWarnings("all")
-public class Solution3 {
+public class Solution2 {
 
     /**
      * <a href="https://leetcode.cn/problems/remove-k-digits/description/">402. 移掉 K 位数字</a>
@@ -15,7 +15,7 @@ public class Solution3 {
 
         // deque 存储的是 <= chars[i] 的元素
         Deque<Character> deque = new ArrayDeque<>(); // 单调栈: [小 -> 大
-        for (int i = 0; i < chars.length; i++) {
+        for (int i = 0; i < n; i++) {
             char c = chars[i];
 
             while (!deque.isEmpty() && deque.getLast() > c && k > 0) {
@@ -31,10 +31,10 @@ public class Solution3 {
             k--;
         }
 
-        while (!deque.isEmpty() && deque.getFirst() == '0') deque.removeFirst();
+        while (!deque.isEmpty() && deque.getFirst() == '0') deque.removeFirst(); // 删除 3 位: 1001239153 -> 0012153 
         StringBuilder sb = new StringBuilder();
         while (!deque.isEmpty()) sb.append(deque.removeFirst());
-        return sb.length() == 0 ? "0" : sb.toString();
+        return sb.length() == 0 ? "0" : sb.toString();                           // 删除 2 位: 1001 -> 00 -> 空
     }
 
     /**
@@ -111,6 +111,8 @@ public class Solution3 {
         return res;
     }
 
+    // [6, 7] √     [5]
+    // [6, 0, 4]    [5, 9] √
     private int compare(int[] arr1, int p1, int[] arr2, int p2) {
         int m = arr1.length;
         int n = arr2.length;

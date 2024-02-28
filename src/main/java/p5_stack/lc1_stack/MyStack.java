@@ -1,4 +1,4 @@
-package p5_stack;
+package p5_stack.lc1_stack;
 
 import java.util.LinkedList;
 import java.util.Queue;

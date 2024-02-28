@@ -1,11 +1,31 @@
-package p5_stack;
+package p5_stack.lc2_monotonic_stack;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.HashMap;
 
 @SuppressWarnings("all")
-public class Solution2 {
+public class Solution1 {
+
+    // 单调栈技巧
+    // res[i] 代表: 从位置 i 往右看, 第一个 > nums[i] 的元素
+    private int[] rightFirstBig(int[] nums) {
+        int n = nums.length;
+        int[] res = new int[n];
+
+        // stack 存储 > nums[i] 的元素
+        Deque<Integer> stack = new ArrayDeque<>(); // 单调栈: 小 <- 大]
+        for (int i = n - 1; i >= 0; i--) {
+            int num = nums[i];
+
+            while (!stack.isEmpty() && stack.peek() <= num) stack.pop();
+            res[i] = stack.isEmpty() ? -1 : stack.peek();
+
+            stack.push(num);
+        }
+
+        return res;
+    }
 
     /**
      * <a href="https://leetcode.cn/problems/next-greater-element-i/description/">496. 下一个更大元素 I</a>
@@ -21,6 +41,7 @@ public class Solution2 {
 
             while (!stack.isEmpty() && stack.peek() <= num) stack.pop();
             map.put(num, stack.isEmpty() ? -1 : stack.peek());
+
             stack.push(num);
         }
 
@@ -43,6 +64,7 @@ public class Solution2 {
 
             while (!stack.isEmpty() && stack.peek() <= num) stack.pop();
             res[i % n] = stack.isEmpty() ? -1 : stack.peek();
+
             stack.push(num);
         }
 
@@ -63,6 +85,7 @@ public class Solution2 {
 
             while (!stack.isEmpty() && temperatures[stack.peek()] <= num) stack.pop();
             res[i] = stack.isEmpty() ? 0 : stack.peek() - i;
+
             stack.push(i);
         }
 

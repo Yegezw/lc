@@ -1,4 +1,4 @@
-package p6_queue.pq;
+package p6_queue.lc3_priority_queue;
 
 import java.util.PriorityQueue;
 

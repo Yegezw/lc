@@ -1,10 +1,10 @@
-package p5_stack;
+package p5_stack.lc1_stack;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 
 @SuppressWarnings("all")
-public class Solution1 {
+public class Solution {
 
     /**
      * <a href="https://leetcode.cn/problems/valid-parentheses/description/">20. 有效的括号</a>
@@ -34,7 +34,7 @@ public class Solution1 {
         Deque<Integer> stack = new ArrayDeque<>();
 
         for (String token : tokens) {
-            if (!"+-*/".contains(token)) stack.push(Integer.valueOf(token));
+            if (!"+-*/".contains(token)) stack.push(Integer.parseInt(token));
             else {
                 int v2 = stack.pop();
                 int v1 = stack.pop();

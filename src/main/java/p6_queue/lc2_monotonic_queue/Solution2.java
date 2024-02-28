@@ -1,10 +1,10 @@
-package p6_queue;
+package p6_queue.lc2_monotonic_queue;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 
 @SuppressWarnings("all")
-public class Solution3 {
+public class Solution2 {
 
     /**
      * <a href="https://leetcode.cn/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/description/">1438. 绝对差不超过限制的最长连续子数组</a>

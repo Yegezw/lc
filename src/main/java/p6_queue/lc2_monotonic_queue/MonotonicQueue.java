@@ -1,4 +1,4 @@
-package p6_queue;
+package p6_queue.lc2_monotonic_queue;
 
 import java.util.Deque;
 import java.util.LinkedList;

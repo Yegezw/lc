@@ -1,4 +1,4 @@
-package p6_queue;
+package p6_queue.lc1_queue;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
