@@ -42,10 +42,11 @@ public class LFUCache {
             freq.put(key, 1);
             freqToKeys.putIfAbsent(1, new LinkedHashSet<>());
             freqToKeys.get(1).add(key);
-            minFreq = 1;
+            minFreq = 1;  // 核心
         }
     }
 
+    // 可能会导致 minFreq++
     private void increaseFreq(int key) {
         int oldFreq = freq.get(key);
         freq.put(key, oldFreq + 1);
@@ -61,6 +62,7 @@ public class LFUCache {
         freqToKeys.get(oldFreq + 1).add(key);
     }
 
+    // 不维护 minFreq, 由 put() 维护
     private void removeMinFreqKey() {
         LinkedHashSet<Integer> keys = freqToKeys.get(minFreq);
         int delKey = keys.iterator().next();
