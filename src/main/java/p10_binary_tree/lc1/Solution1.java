@@ -2,6 +2,9 @@ package p10_binary_tree.lc1;
 
 import help.tree.TreeNode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 二叉树纲领篇
  */
@@ -81,5 +84,25 @@ public class Solution1 {
     private int rightDepth(TreeNode node) {
         if (node == null) return 0;
         return rightDepth(node.right) + 1;
+    }
+
+    /**
+     * <a href="https://leetcode.cn/problems/binary-tree-paths/">257. 二叉树的所有路径</a>
+     */
+    public List<String> binaryTreePaths(TreeNode node) {
+        List<String> res = new ArrayList<>();
+        if (node == null) return res;
+
+        if (node.left == null && node.right == null) {
+            res.add(node.val + "");
+            return res;
+        }
+
+        List<String> left = binaryTreePaths(node.left);
+        List<String> right = binaryTreePaths(node.right);
+
+        for (String s : left) res.add(node.val + "->" + s);
+        for (String s : right) res.add(node.val + "->" + s);
+        return res;
     }
 }

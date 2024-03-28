@@ -84,7 +84,7 @@ public class Solution2 {
         }
 
         int[] arr = Arrays.copyOf(piles, size);
-        System.out.println(Arrays.toString(arr)); // 输出最长上升子序列
+        System.out.println(Arrays.toString(arr)); // 输出最长上升子序列 TODO 这里是错误的
         return size;
     }
 

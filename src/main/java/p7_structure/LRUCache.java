@@ -3,12 +3,13 @@ package p7_structure;
 import java.util.HashMap;
 
 /**
- * <a href="https://www.yuque.com/u21488478/kb/bp9macna8d6z044b">146. LRU 缓存</a>
+ * <a href="https://leetcode.cn/problems/lru-cache/description/">146. LRU 缓存</a>
  */
 @SuppressWarnings("all")
 public class LRUCache {
 
     private final HashMap<Integer, Node> map;
+    private final int capacity;
 
     public LRUCache(int capacity) {
         this.map = new HashMap<>();
@@ -69,7 +70,6 @@ public class LRUCache {
 
     private final Node dummyHead;
     private final Node dummyTail;
-    private final int capacity;
 
     private void addLast(Node node) {
         link(dummyTail.prev, node, dummyTail);

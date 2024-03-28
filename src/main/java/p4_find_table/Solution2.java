@@ -93,8 +93,8 @@ public class Solution2 {
 
         int count = 0;
         for (int k : nums3) {
-            for (int j : nums4) {
-                int sum = k + j;
+            for (int l : nums4) {
+                int sum = k + l;
                 count += map.getOrDefault(-sum, 0);
             }
         }

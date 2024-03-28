@@ -181,7 +181,7 @@ public class Solution1 {
     }
 
     /**
-     * <a href="https://www.yuque.com/u21488478/kb/gcfzrvwmz4oe7t96">160. 相交链表</a>
+     * <a href="https://leetcode.cn/problems/intersection-of-two-linked-lists/description/">160. 相交链表</a>
      */
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode p1 = headA;

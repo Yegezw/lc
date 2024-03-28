@@ -26,7 +26,10 @@ public class Solution3 {
             boolean res = false;
             for (String prefix : wordDict) {
                 if (target.startsWith(prefix)) {
-                    if (dp(s, start + prefix.length(), wordDict)) res = true;
+                    if (dp(s, start + prefix.length(), wordDict)) {
+                        res = true;
+                        break;
+                    }
                 }
             }
             memo[start] = res ? 1 : 0;

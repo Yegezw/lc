@@ -8,33 +8,61 @@ import java.util.Arrays;
 @SuppressWarnings("all")
 public class Solution4 {
 
-    public int findLength(int[] nums1, int[] nums2) {
-        memo = new int[nums1.length][nums2.length];
-        for (int[] arr : memo) Arrays.fill(arr, -1);
+    // 动态规划
+    public int findLength1(int[] nums1, int[] nums2) {
+        // memo[p1][p2] 代表
+        // 以 p1 p2 为结尾的、且包含 p1 p2 的最长重复子数组的长度
+        int[][] memo = new int[nums1.length][nums2.length];
 
-        int res = -1;
+        int maxLen = 0;
         for (int p1 = 0; p1 < nums1.length; p1++) {
             for (int p2 = 0; p2 < nums2.length; p2++) {
-                res = Math.max(res, dp(nums1, p1, nums2, p2));
+                // 求解 memo[p1][p2]
+                if (nums1[p1] == nums2[p2]) {
+                    if (p1 - 1 >= 0 && p2 - 1 >= 0) {
+                        memo[p1][p2] = memo[p1 - 1][p2 - 1] + 1;
+                    } else {
+                        memo[p1][p2] = 1;
+                    }
+                }
+                maxLen = Math.max(maxLen, memo[p1][p2]);
             }
         }
-        return res;
+
+        return maxLen;
     }
 
-    private int[][] memo;
+    // 输出路径
+    public int findLength2(int[] nums1, int[] nums2) {
+        // memo[p1][p2] 代表
+        // 以 p1 p2 为结尾的、且包含 p1 p2 的最长重复子数组的长度
+        int[][] memo = new int[nums1.length][nums2.length];
 
-    // 返回 nums1[p1 ...] nums2[p2 ...] 以 p1 p2 作为起点的最长重复子数组长度
-    private int dp(int[] nums1, int p1, int[] nums2, int p2) {
-        if (p1 == nums1.length || p2 == nums2.length) return 0;
+        int maxLen = 0;
+        int end = -1; // nums1 的末尾索引
+        for (int p1 = 0; p1 < nums1.length; p1++) {
+            for (int p2 = 0; p2 < nums2.length; p2++) {
+                // 求解 memo[p1][p2]
+                if (nums1[p1] == nums2[p2]) {
+                    if (p1 - 1 >= 0 && p2 - 1 >= 0) {
+                        memo[p1][p2] = memo[p1 - 1][p2 - 1] + 1;
+                    } else {
+                        memo[p1][p2] = 1;
+                    }
+                }
 
-        if (memo[p1][p2] == -1) {
-            if (nums1[p1] != nums2[p2]) {
-                memo[p1][p2] = 0;
-            } else {
-                memo[p1][p2] = 1 + dp(nums1, p1 + 1, nums2, p2 + 1);
+                if (memo[p1][p2] > maxLen) {
+                    maxLen = memo[p1][p2];
+                    end = p1;
+                }
             }
         }
 
-        return memo[p1][p2];
+        // 输出路径
+        int start = end - (maxLen - 1);
+        int[] arr = Arrays.copyOfRange(nums1, start, end + 1);
+        System.out.println(Arrays.toString(arr)); // 输出最长重复子数组
+
+        return maxLen;
     }
 }

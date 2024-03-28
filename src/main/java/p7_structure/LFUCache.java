@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.LinkedHashSet;
 
 /**
- * <a href="https://www.yuque.com/u21488478/kb/bp9macna8d6z044b">460. LFU 缓存</a>
+ * <a href="https://leetcode.cn/problems/lfu-cache/description/">460. LFU 缓存</a>
  */
 @SuppressWarnings("all")
 public class LFUCache {

@@ -12,7 +12,7 @@ public class Solution5 {
         // i 作为起跳点, 能跳的最远格子为 i + nums[i]
         for (int i = 0; i < nums.length - 1; i++) {
             maxPos = Math.max(maxPos, i + nums[i]);
-            if (maxPos == i) return false; // 不能往后跳了
+            if (i == maxPos) return false; // 不能往后跳了
         }
 
         return true;

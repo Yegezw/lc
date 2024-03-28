@@ -52,29 +52,4 @@ public class Solution3 {
             path.removeLast();
         }
     }
-
-    /**
-     * <a href="https://leetcode.cn/problems/path-sum-iii/description/">437. 路径总和 III</a>
-     */
-    public int pathSum3(TreeNode root, int targetSum) {
-        if (root == null) return 0;
-
-        int res = findPath(root, targetSum);    // 包含当前 root 节点
-        res += findPath(root.left, targetSum);  // 不包含当前 root 节点
-        res += findPath(root.right, targetSum); // 不包含当前 root 节点
-
-        return res;
-    }
-
-    // 在以 node 为根节点的二叉树中, 寻找包含 node 的和为 sum 的路径, 返回路径个数
-    private int findPath(TreeNode node, int targetSum) {
-        if (node == null) return 0;
-
-        int res = 0;
-        if (node.val == targetSum) res++;
-        res += findPath(node.left, targetSum - node.val);
-        res += findPath(node.right, targetSum - node.val);
-
-        return res;
-    }
 }

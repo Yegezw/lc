@@ -2,42 +2,78 @@ package p10_binary_tree.lc7;
 
 import help.tree.TreeNode;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.LinkedList;
+import java.util.Queue;
 
-/**
- * <a href="https://leetcode.cn/problems/path-sum-iii/description/">437. 路径总和 III</a>
- */
 @SuppressWarnings("all")
 public class Solution5 {
 
-    private int res;
-    private long sum;
-    private Map<Long, Integer> map; // sum -> count
+    /**
+     * <a href="https://leetcode.cn/problems/maximum-width-of-binary-tree/description/">662. 二叉树最大宽度</a>
+     */
+    public int widthOfBinaryTree(TreeNode root) {
+        int res = 0;
 
-    public int pathSum(TreeNode root, int targetSum) {
-        res = 0;
-        sum = 0;
-        map = new HashMap<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        root.val = 1;
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
 
-        map.put(0L, 1); // 为了处理包含根节点的情况
-        dfs(root, targetSum);
+            int l = -1;
+            int r = -1;
+            for (int i = 0; i < size; i++) {
+                TreeNode cur = queue.remove();
+                if (i == 0) l = cur.val;
+                if (i == size - 1) r = cur.val;
+
+                if (cur.left != null) {
+                    cur.left.val = cur.val * 2;
+                    queue.add(cur.left);
+                }
+                if (cur.right != null) {
+                    cur.right.val = cur.val * 2 + 1;
+                    queue.add(cur.right);
+                }
+            }
+
+            res = Math.max(res, r - l + 1);
+        }
+
         return res;
     }
 
-    private void dfs(TreeNode node, int targetSum) {
-        if (node == null) return;
+    /**
+     * <a href="https://leetcode.cn/problems/check-completeness-of-a-binary-tree/description/">958. 二叉树的完全性检验</a>
+     */
+    public boolean isCompleteTree(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode cur = queue.remove();
+            if (cur == null) break;
 
-        // 进入 node
-        sum += node.val;
-        res += map.getOrDefault(sum - targetSum, 0);
-        map.put(sum, map.getOrDefault(sum, 0) + 1);
+            queue.add(cur.left);
+            queue.add(cur.right);
+        }
 
-        dfs(node.left, targetSum);
-        dfs(node.right, targetSum);
+        while (!queue.isEmpty()) {
+            if (queue.remove() != null) return false;
+        }
 
-        // 离开 node
-        map.put(sum, map.getOrDefault(sum, 0) - 1);
-        sum -= node.val;
+        return true;
+    }
+
+    /**
+     * <a href="https://leetcode.cn/problems/minimum-depth-of-binary-tree/description/">111. 二叉树的最小深度</a>
+     */
+    public int minDepth(TreeNode node) {
+        if (node == null) return 0;
+
+        int left = minDepth(node.left);
+        int right = minDepth(node.right);
+
+        if (left != 0 && right != 0) return Math.min(left, right) + 1;
+        return left + right + 1;
     }
 }

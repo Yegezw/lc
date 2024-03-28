@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
 public class Solution2 {
 
     /**
-     * <a href="https://www.yuque.com/u21488478/kb/eogfxvrm77g6vzxl">215. 数组中的第 K 个最大元素</a>
+     * <a href="https://leetcode.cn/problems/kth-largest-element-in-an-array/description/">215. 数组中的第 K 个最大元素</a>
      */
     public int findKthLargest(int[] nums, int k) {
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
