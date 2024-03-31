@@ -12,6 +12,7 @@ public class Solution4 {
         if (obstacleGrid[0][0] == 1) return 0;
         if (obstacleGrid[m - 1][n - 1] == 1) return 0;
 
+        // dp[x][y] = 从 [0][0] 走到 [x][y] 的路径数
         int[][] dp = new int[m][n];
         dp[0][0] = 1;
         for (int x = 0; x < m; x++) {

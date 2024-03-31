@@ -19,7 +19,7 @@ public class Solution2 {
     // 返回用 coins[0 ... index] 填满 amount 的次数
     private int dp(int[] coins, int index, int amount) {
         if (amount == 0) return 1;
-        if (index == -1 || amount < 0) return 0;
+        if (index < 0 || amount < 0) return 0;
 
         if (memo[index][amount] == -1) {
             int res = 0;

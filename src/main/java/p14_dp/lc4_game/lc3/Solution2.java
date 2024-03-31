@@ -12,7 +12,7 @@ public class Solution2 {
 
         // dp[i][0] 第 i 天结束时未持有股票
         // dp[i][1] 第 i 天结束时已持有股票
-        int[][] dp = new int[prices.length][2];
+        int[][] dp = new int[n][2];
 
         dp[0][0] = 0;
         dp[0][1] = -prices[0];

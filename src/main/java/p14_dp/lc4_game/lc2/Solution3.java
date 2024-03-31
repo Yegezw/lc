@@ -11,6 +11,7 @@ import java.util.Map;
 @SuppressWarnings("all")
 public class Solution3 {
 
+    // (打劫 || 不打劫) node 能够偷窃到的最高金额
     private Map<TreeNode, Integer> memo = new HashMap<>();
 
     public int rob(TreeNode node) {

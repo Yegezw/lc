@@ -23,8 +23,8 @@ public class Solution {
 
     // 返回用 nums[0 ... index] 构造出 target 的次数
     private int dp(int[] nums, int index, int target) {
-        if (index == -1 && target == 0) return 1;
-        if (index == -1) return 0;
+        if (index < 0 && target == 0) return 1;
+        if (index < 0) return 0;
 
         if (!memo.get(index).containsKey(target)) {
             int res = 0;

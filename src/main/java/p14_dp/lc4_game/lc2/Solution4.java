@@ -21,9 +21,9 @@ public class Solution4 {
         int[] left = dp(node.left);
         int[] right = dp(node.right);
 
-        // 不打劫 node
+        // 不打劫 node: 左右孩子都能打劫
         int res1 = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
-        // 打劫 node
+        // 打劫 node: 左右孩子都不能打劫
         int res2 = node.val + left[0] + right[0];
 
         return new int[]{res1, res2};

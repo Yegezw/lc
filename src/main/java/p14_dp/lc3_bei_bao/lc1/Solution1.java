@@ -19,7 +19,7 @@ public class Solution1 {
 
     // 返回 w[0 ... index] 填充容量为 c 的背包的最大价值
     private int dp(int[] w, int[] v, int index, int c) {
-        if (index == -1 || c <= 0) return 0;
+        if (index < 0 || c <= 0) return 0;
 
         if (memo[index][c] == -1) {
             // w[index] 不放进背包
