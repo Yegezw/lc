@@ -25,8 +25,8 @@ public class Solution5 {
         int index = 1;
         for (ListNode cur = head.next; cur != null; cur = cur.next, index++) {
             // random[0 ... index]
-            int j = random.nextInt(index + 1);
-            if (j == 0) res = cur.val;
+            int x = random.nextInt(index + 1);
+            if (x == 0) res = cur.val;
         }
         return res;
     }

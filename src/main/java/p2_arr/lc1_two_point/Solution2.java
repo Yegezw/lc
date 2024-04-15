@@ -119,7 +119,7 @@ public class Solution2 {
         Arrays.sort(nums);
         int n = nums.length;
 
-        int diff = Integer.MAX_VALUE; // target 与三数之和的差值
+        int diff = Integer.MAX_VALUE; // diff = target - sum
 
         // nums[i] + nums[l] + nums[r]
         for (int i = 0; i + 2 < n; i++) {

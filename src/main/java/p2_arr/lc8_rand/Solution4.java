@@ -26,8 +26,8 @@ public class Solution4 {
         int[] data = nums.clone();
         for (int i = data.length - 1; i >= 0; i--) {
             // random[0 ... i]
-            int j = random.nextInt(i + 1);
-            swap(data, i, j);
+            int x = random.nextInt(i + 1);
+            swap(data, i, x);
         }
         return data;
     }
@@ -39,8 +39,8 @@ public class Solution4 {
         int[] data = nums.clone();
         for (int i = 0; i < data.length; i++) {
             // random[i ... data.length - 1]
-            int j = i + random.nextInt(data.length - i);
-            swap(data, i, j);
+            int x = i + random.nextInt(data.length - i);
+            swap(data, i, x);
         }
         return data;
     }
