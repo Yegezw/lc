@@ -44,8 +44,8 @@ public class LRUCache {
             }
 
             Node node = new Node(key, value);
-            addLast(node);
             map.put(key, node);
+            addLast(node);
         }
     }
 

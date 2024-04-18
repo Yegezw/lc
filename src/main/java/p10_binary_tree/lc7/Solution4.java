@@ -37,7 +37,7 @@ public class Solution4 {
         dfs(node.right, targetSum);
 
         // 离开 node
-        map.put(sum, map.getOrDefault(sum, 0) - 1);
+        map.put(sum, map.get(sum) - 1);
         sum -= node.val;
     }
 }

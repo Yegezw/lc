@@ -53,6 +53,7 @@ public class Solution5 {
             TreeNode cur = queue.remove();
             if (cur == null) break;
 
+            // 无脑入队
             queue.add(cur.left);
             queue.add(cur.right);
         }
